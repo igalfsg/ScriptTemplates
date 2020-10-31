@@ -5,7 +5,7 @@ then
 else     
     echo 'Adding user {USERNAME}';
     useradd {USERNAME}
-    #if sudo add sudo command for the distro
+    {SUDOLINE}
 fi
 
 #Adding principal for authentication

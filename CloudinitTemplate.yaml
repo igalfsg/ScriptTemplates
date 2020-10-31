@@ -1,0 +1,12 @@
+#cloud-config
+bootcmd:
+  - cloud-init-per once ssh--ca echo "TrustedUserCAKeys /etc/ssh/trusted_ca_keys.pub" >> /etc/ssh/sshd_config
+  - cloud-init-per once ssh-users-ca echo "AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u" >> /etc/ssh/sshd_config
+  - cloud-init-per once ssh-users mkdir /etc/ssh/auth_principals
+  {CREATELINUXUSERS}
+write_files:
+  - path: /etc/ssh/trusted_ca_keys.pub
+    content: {CAKEY}
+runcmd:
+  {CREATEUSERSAUTH}
+  

@@ -25,6 +25,7 @@ echo "{CAKEY}"  > /etc/ssh/trusted_ca_keys.pub
 if [ ! -d "/etc/ssh/auth_principals" ]; then
   mkdir /etc/ssh/auth_principals
 fi
+sudogroup=$(awk '$1 ~ /^sudo/'  /etc/group)    
 
 
 {USERSSCRIPT}

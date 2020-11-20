@@ -20,7 +20,7 @@ echo "TrustedUserCAKeys /etc/ssh/trusted_ca_keys.pub" >> /etc/ssh/sshd_config
 echo "Adding Authorized Principals file to /etc/ssh/sshd_config"
 echo "AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u" >> /etc/ssh/sshd_config
 echo "Adding CA Public Key"
-echo "{CAKEY}"  > /etc/ssh/trusted_ca_keys.pub
+echo "{CAKEY}"  >> /etc/ssh/trusted_ca_keys.pub
 
 if [ ! -d "/etc/ssh/auth_principals" ]; then
   mkdir /etc/ssh/auth_principals
@@ -32,4 +32,4 @@ sudogroup=$(awk '$1 ~ /^sudo/'  /etc/group)
 
 
 
-
+service ssh start

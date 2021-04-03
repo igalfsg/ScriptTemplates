@@ -9,4 +9,4 @@ else
 fi
 
 #Adding principal for authentication
-echo -e '{USERNAME}' > /etc/ssh/auth_principals/{USERNAME}
+echo '{USERNAME}' > /etc/ssh/auth_principals/{USERNAME}

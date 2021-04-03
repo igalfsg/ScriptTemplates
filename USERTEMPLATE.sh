@@ -5,7 +5,7 @@ then
 else     
     echo 'Adding user {USERNAME}';
     useradd {USERNAME}
-    {SUDOLINE}
+{SUDOLINE}
 fi
 
 #Adding principal for authentication

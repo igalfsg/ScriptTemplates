@@ -32,4 +32,4 @@ sudogroup=$(awk '$1 ~ /^sudo/'  /etc/group)
 
 
 
-service ssh start
+service ssh restart
